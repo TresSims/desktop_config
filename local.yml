@@ -1,6 +1,4 @@
 ---
 - name: Common Setup Tasks
 
-  tasks:
-    - name: Install packages
-      import_playbook: base_packages.yml
+- import_playbook: base_packages.yml
