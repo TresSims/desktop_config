@@ -7,7 +7,7 @@
     update: yes
 
 - name: Makepkg inside of git package
-  ansible.builtlin.command:
+  ansible.builtin.command:
     cmd: makepkg -si
     chdir: /home/root/repos/yay
     creates: /usr/bin/yay
