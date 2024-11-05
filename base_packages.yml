@@ -2,11 +2,16 @@
 - name: Install common packages
 
   tasks:
+    - name: Install Git
+      community.general.pacman:
+        name: git
+        state: present
+
     - name: Setup AUR
       import_playbook: setup_aur.yml
 
     - name: Install Neofetch
-      yay:
+      community.general.pacman:
         name: neofetch
         state: present
         executable: yay
