@@ -1,16 +1,13 @@
 ---
-- name: Setup AUR
+- name: Clone Ansible YAY AUR package
+  git:
+    repo: https://aur.archlinux.org/yay.git
+    dest: /home/root/repos
+    clone: yes
+    update: yes
 
-  tasks:
-    - name: Clone Ansible YAY AUR package
-      git:
-        repo: https://aur.archlinux.org/yay.git
-        dest: /home/root/repos
-        clone: yes
-        update: yes
-
-    - name: Makepkg inside of git package
-      ansible.builtlin.command:
-        cmd: makepkg -si
-        chdir: /home/root/repos/yay
-        creates: /usr/bin/yay
+- name: Makepkg inside of git package
+  ansible.builtlin.command:
+    cmd: makepkg -si
+    chdir: /home/root/repos/yay
+    creates: /usr/bin/yay
