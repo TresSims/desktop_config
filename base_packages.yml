@@ -1,5 +1,6 @@
 ---
 - name: Install common packages
+  hosts: all
 
   tasks:
     - name: Setup AUR

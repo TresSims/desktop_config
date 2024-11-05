@@ -1,4 +1,5 @@
 ---
 - name: Common Setup Tasks
+  hosts: all
 
 - import_playbook: base_packages.yml
