@@ -2,4 +2,9 @@
 - name: Common Setup Tasks
   hosts: all
 
+  tasks:
+    - name: Get package facts
+      ansible.builtin.package_facts:
+        manager: pacman
+
 - import_playbook: base_packages.yml
