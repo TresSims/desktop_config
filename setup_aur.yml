@@ -2,7 +2,7 @@
 - name: Clone Ansible YAY AUR package
   git:
     repo: https://aur.archlinux.org/yay.git
-    dest: /home/root/repos
+    dest: /home/root/repos/yay
     clone: yes
     update: yes
 
