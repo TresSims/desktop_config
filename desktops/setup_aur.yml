@@ -3,6 +3,7 @@
   hosts: desktops
   become: true
   become_user: tsims
+  become_method: su
 
   tasks:
     - name: Clone Ansible YAY AUR package
