@@ -7,5 +7,17 @@
       ansible.builtin.user:
         name: tsims
         create_home: yes
-        groups: wheel,sudo
+
+    - name: Add user to Arch sudo group
+      when: ansible_facts['distribution'] == "Archlinux"
+      ansible.builtin.user:
+        name: tsims
+        groups: wheel
+        append: yes
+
+    - name: Add user to Debian sudo group
+      when: ansible_facts['distribution'] == "Debian"
+      ansible.builtin.user:
+        name: tsims
+        groups: sudo
         append: yes
