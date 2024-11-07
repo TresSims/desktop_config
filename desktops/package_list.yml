@@ -1,0 +1,22 @@
+---
+# Main repo packages
+core_common:
+  - base-devel
+  - go
+  - neofetch
+
+core_workstation:
+  - blender
+
+core_laptop:
+  - bat
+
+# aur packages
+aur_common:
+  - gotop
+
+aur_workstation:
+  - shadred-bin
+
+aur_laptop:
+  - exa

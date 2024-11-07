@@ -1,10 +1,12 @@
 ---
 - name: Install AUR packages
   hosts: desktops
+  vars_files:
+    - package_list.yml
 
   tasks:
-    - name: Install gotop
+    - name: Install core AUR packages
       community.general.pacman:
-        name: gotop
+        name: "{{ aur_common }}"
         state: present
         executable: yay

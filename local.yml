@@ -9,8 +9,8 @@
         manager: pacman
 
 - import_playbook: ensure_user.yml
-- import_playbook: desktops/base_packages.yml
+- import_playbook: desktops/install_base_packages.yml
 - name: Install AUR manually
   ansible.builtin.import_playbook: desktops/setup_aur.yml
   when: "'yay' not in ansible_facts.packages"
-- import_playbook: desktops/aur_packages.yml
+- import_playbook: desktops/install_aur_packages.yml

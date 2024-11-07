@@ -1,0 +1,11 @@
+---
+- name: Install common packages
+  hosts: desktops
+  vars_files:
+    - package_list.yml
+
+  tasks:
+    - name: Install core main repo packages
+      community.general.pacman:
+        name: "{{ core_common }}"
+        state: present
