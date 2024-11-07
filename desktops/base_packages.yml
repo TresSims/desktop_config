@@ -1,0 +1,14 @@
+---
+- name: Install common packages
+  hosts: all
+
+  tasks:
+    - name: Install base-devel
+      community.general.pacman:
+        name: base-devel
+        state: present
+
+    - name: Install Neofetch
+      community.general.pacman:
+        name: neofetch
+        state: present

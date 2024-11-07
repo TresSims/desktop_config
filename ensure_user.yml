@@ -1,0 +1,11 @@
+---
+- name: Ensure base user
+  hosts: all
+
+  tasks:
+    - name: Create my user
+      ansible.builtin.user:
+        name: tsims
+        create_home: yes
+        groups: wheel,sudo
+        append: yes
