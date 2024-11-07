@@ -1,6 +1,6 @@
 ---
 - name: Install common packages
-  hosts: all
+  hosts: desktops
 
   tasks:
     - name: Install base-devel

@@ -1,0 +1,10 @@
+---
+- name: Install AUR packages
+  hosts: desktops
+
+  tasks:
+    - name: Install gotop
+      community.general.pacman:
+        name: gotop
+        state: present
+        executable: yay
