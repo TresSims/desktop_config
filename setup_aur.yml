@@ -2,7 +2,7 @@
 - name: Clone Ansible YAY AUR package
   git:
     repo: https://aur.archlinux.org/yay.git
-    dest: /home/root/repos/yay
+    dest: /tmp/yay
     clone: yes
     update: yes
 
@@ -11,5 +11,5 @@
   become_user: nobody
   ansible.builtin.command:
     cmd: makepkg -si
-    chdir: /home/root/repos/yay
+    chdir: /tmp/yay
     creates: /usr/bin/yay
