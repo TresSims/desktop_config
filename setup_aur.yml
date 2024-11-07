@@ -7,8 +7,6 @@
     update: yes
 
 - name: Makepkg inside of git package
-  become: yes
-  become_user: nobody
   ansible.builtin.command:
     cmd: makepkg -si
     chdir: /tmp/yay

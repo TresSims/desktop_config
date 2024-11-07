@@ -4,6 +4,8 @@
 
   tasks:
     - name: Setup AUR
+      become: yes
+      become_user: nobody
       import_tasks: setup_aur.yml
       when: "'yay' not in ansible_facts.packages"
 
