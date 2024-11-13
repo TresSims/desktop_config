@@ -1,22 +1,130 @@
 ---
 # Main repo packages
 core_common:
+  - base
   - base-devel
+  - act
+  - arandr
   - go
   - neofetch
+  - bat
+  - calc
+  - chromium
+  - croc
+  - cups
+  - discord
+  - docker
+  - docker-compose
+  - dunst
+  - exploitdb
+  - eza
+  - feh
+  - filezilla
+  - firefox
+  - fish
+  - gdb
+  - git
+  - github-cli
+  - gnu-netcat
+  - gpick
+  - grub
+  - guake
+  - hashcat
+  - helvum
+  - hugo
+  - i3-wm
+  - iwd
+  - john
+  - libreoffice-fresh
+  - linux
+  - linux-firmware
+  - linux-headers
+  - lxappearance-gtk3
+  - metasploit
+  - nemo
+  - neofetch
+  - neovim
+  - netstat-nat
+  - nitrogen
+  - nmap
+  - noto-fonts-emoji
+  - ntp
+  - obsidian
+  - okular
+  - openssh
+  - openvpn
+  - pavucontrol
+  - picom
+  - polybar
+  - python
+  - python-pip
+  - python-pipx
+  - qt5-styleplugins
+  - ranger
+  - ripgrep
+  - rofi
+  - rsync
+  - sddm
+  - sl
+  - speedtest-cli
+  - sqlmap
+  - stalonetray
+  - starship
+  - subversion
+  - tcpdump
+  - telegram-desktop
+  - tmux
+  - ttf-hack-nerd
+  - ttf-jetbrains-mono
+  - ttf-jetbrains-mono-nerd
+  - unrar
+  - wayland-protocols
+  - wget
+  - whois
+  - wireshark-qt
+  - wireshark-cli
+  - xclip
+  - xdo
+  - xorg-server
+  - zaproxy
+  - zip
 
 core_workstation:
   - blender
+  - audacity
+  - gimp
+  - godot
+  - inkscape
+  - krita
+  - lutris
+  - obs-studio
+  - piper
+  - pipewire-pulse
+  - tiled
+  - xf86-input-wacom
 
 core_laptop:
-  - bat
 
 # aur packages
 aur_common:
   - gotop
+  - asdf-vm
+  - breeze-flat
+  - enpass-bin
+  - flameshot-git
+  - geekbench
+  - gobuster
+  - hashid
+  - spotify
+  - ttf-icomoon-feather
+  - zoom
 
 aur_workstation:
   - shadred-bin
+  - beeref
+  - digimend-kernel-drivers-dkms-git
+  - dropbox
+  - multimc-bin
 
 aur_laptop:
-  - exa
+  - iwgtk
