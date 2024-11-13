@@ -1,0 +1,28 @@
+---
+- name: Install packages
+  hosts: desktops
+
+- tasks:
+    - name: Setup multilib
+      ansible.builtin.blockinfile:
+      path: /etc/pacman.conf
+      append_newline: true
+      prepend_newline: true
+      block: |
+        [multilib]
+        Include = /etc/pacman.d/mirrorlist
+
+    - name: Update packages and cache
+      community.general.pacman:
+        update_cache: true
+        upgrade: true
+
+- name: Import Base Packages
+  ansible.builtin.import_playbook: packages/install_base_packages.yml
+
+- name: Install AUR manually
+  ansible.builtin.import_playbook: packages/setup_aur.yml
+  when: "'yay' not in ansible_facts.packages"
+
+- name: Import AUR Packages
+  ansible.builtin.import_playbook: packages/install_aur_packages.yml

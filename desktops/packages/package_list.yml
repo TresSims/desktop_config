@@ -102,6 +102,8 @@ core_workstation:
   - pipewire-pulse
   - tiled
   - xf86-input-wacom
+  - tailscale
+  - steam
 
 core_laptop:
 
