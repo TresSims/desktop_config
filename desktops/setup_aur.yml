@@ -1,18 +1,31 @@
 ---
 - name: Setup AUR using YAY
   hosts: desktops
-  become: true
-  become_user: nobody
-  become_method: su
 
   tasks:
+    - name: Create pacman builder user
+      ansible.builtin.user:
+        name: aur_builder
+
+    - name: Give aur user sudo
+      ansible.builtin.lineinfile:
+        path: /etc/sudoers.d/aur_builder-allow-to-sudo-pacman
+        state: present
+        line: "aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman"
+        validate: /usr/sbin/visudo -cf %s
+        create: yes
+
     - name: Clone yay AUR package
+      become: yes
+      become_user: aur_builder
       git:
         repo: https://aur.archlinux.org/yay.git
         dest: /tmp/yay
         update: yes
 
     - name: Build and install yay
+      become: yes
+      become_user: aur_builder
       ansible.builtin.command:
         chdir: /tmp/yay
         cmd: makepkg -si --noconfirm
