@@ -2,18 +2,18 @@
 - name: Setup AUR using YAY
   hosts: desktops
   become: true
-  become_user: tsims
+  become_user: nobody
   become_method: su
 
   tasks:
-    - name: Clone Ansible YAY AUR package
+    - name: Clone yay AUR package
       git:
         repo: https://aur.archlinux.org/yay.git
         dest: /tmp/yay
-        clone: yes
         update: yes
 
-    - name: Makepkg inside of git package
+    - name: Build and install yay
       ansible.builtin.command:
-        cmd: makepkg -si
         chdir: /tmp/yay
+        cmd: makepkg -si --noconfirm
+        creates: /usr/bin/yay
