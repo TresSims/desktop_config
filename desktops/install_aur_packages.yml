@@ -6,6 +6,8 @@
 
   tasks:
     - name: Install core AUR packages
+      become: yes
+      become_user: aur_builder
       community.general.pacman:
         name: "{{ aur_common }}"
         state: present
