@@ -30,3 +30,7 @@
         chdir: /tmp/yay
         cmd: makepkg -si --noconfirm
         creates: /usr/bin/yay
+
+    - name: Install aur package
+      community.general.ansible_galaxy_install:
+        requirements_file: ./requirements.yml
