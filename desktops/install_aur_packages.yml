@@ -8,7 +8,7 @@
     - name: Install core AUR packages
       become: yes
       become_user: aur_builder
-      aur:
+      kewlfft.aur.aur:
         name: "{{ aur_common }}"
         state: present
         use: yay
