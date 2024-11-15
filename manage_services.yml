@@ -1,0 +1,27 @@
+---
+- name: Manage Service States
+  hosts: all
+  vars:
+    desktop_services:
+      - sddm
+    core_services:
+      - docker
+      - containerd
+      - ntpd
+      - sshd
+    server_services:
+      - ufw
+
+  tasks:
+    - name: Enable Core Services
+      ansible.builtin.systemd_service:
+        name: "{{ core_services }}"
+        state: started
+        enabled: true
+
+    - name: Enable Desktop Services
+      hosts: desktop
+      ansible.builtin.systemd_service:
+        name: "{{ services }}"
+        state: started
+        enabled: true

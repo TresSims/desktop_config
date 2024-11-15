@@ -9,4 +9,5 @@
         manager: pacman
 
 - import_playbook: desktops/install_packages.yml
+- import_playbook: manage_services.yml
 - import_playbook: ensure_user.yml
