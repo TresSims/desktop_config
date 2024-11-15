@@ -59,7 +59,6 @@ core_common:
   - python
   - python-pip
   - python-pipx
-  - qt5-styleplugins
   - ranger
   - ripgrep
   - rofi
@@ -120,6 +119,7 @@ aur_common:
   - spotify
   - ttf-icomoon-feather
   - zoom
+  - qt5-styleplugins
 
 aur_workstation:
   - shadred-bin
