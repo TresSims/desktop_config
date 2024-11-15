@@ -17,7 +17,6 @@ core_common:
   - docker-compose
   - dunst
   - dhcp
-  - dhcpd
   - exploitdb
   - eza
   - feh
