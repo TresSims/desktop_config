@@ -21,7 +21,7 @@
   ansible.builtin.import_playbook: packages/install_base_packages.yml
 
 - name: Install AUR manually
-  ansible.builtin.import_playbook: packages/setup_aur.yml
+  ansible.builtin.import_playbook: setup_aur.yml
   when: "'yay' not in ansible_facts.packages"
 
 - name: Import AUR Packages
