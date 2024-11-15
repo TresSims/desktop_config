@@ -2,7 +2,7 @@
 - name: Install packages
   hosts: desktops
 
-- tasks:
+  tasks:
     - name: Setup multilib
       ansible.builtin.blockinfile:
         path: /etc/pacman.conf
