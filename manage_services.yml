@@ -1,17 +1,30 @@
 ---
 - name: Manage Service States
   hosts: all
-  vars:
-    services:
-      - sddm
-      - docker
-      - containerd
-      - ntpd
-      - sshd
 
   tasks:
-    - name: Enable Core Services
+    - name: Enable sddm
       ansible.builtin.systemd_service:
-        name: "{{ services }}"
+        name: sddm
+        state: started
+        enabled: true
+    - name: Enable Docker
+      ansible.builtin.systemd_service:
+        name: docker
+        state: started
+        enabled: true
+    - name: Enable conainerd
+      ansible.builtin.systemd_service:
+        name: containerd
+        state: started
+        enabled: true
+    - name: Enable ntpd
+      ansible.builtin.systemd_service:
+        name: ntpd
+        state: started
+        enabled: true
+    - name: Enable sshd
+      ansible.builtin.systemd_service:
+        name: sshd
         state: started
         enabled: true
