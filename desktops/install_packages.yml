@@ -18,11 +18,11 @@
         upgrade: true
 
 - name: Import Base Packages
-  ansible.builtin.import_playbook: packages/install_base_packages.yml
+  ansible.builtin.import_playbook: desktops/packages/install_base_packages.yml
 
 - name: Install AUR manually
-  ansible.builtin.import_playbook: packages/setup_aur.yml
+  ansible.builtin.import_playbook: desktop/packages/setup_aur.yml
   when: "'yay' not in ansible_facts.packages"
 
 - name: Import AUR Packages
-  ansible.builtin.import_playbook: packages/install_aur_packages.yml
+  ansible.builtin.import_playbook: desktops/packages/install_aur_packages.yml
