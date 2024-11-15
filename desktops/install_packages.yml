@@ -5,12 +5,12 @@
 - tasks:
     - name: Setup multilib
       ansible.builtin.blockinfile:
-      path: /etc/pacman.conf
-      append_newline: true
-      prepend_newline: true
-      block: |
-        [multilib]
-        Include = /etc/pacman.d/mirrorlist
+        path: /etc/pacman.conf
+        append_newline: true
+        prepend_newline: true
+        block: |
+          [multilib]
+          Include = /etc/pacman.d/mirrorlist
 
     - name: Update packages and cache
       community.general.pacman:
